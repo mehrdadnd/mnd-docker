@@ -3,9 +3,9 @@ RUN yum install -y httpd \
 && yum clean all
 ADD index.html /var/www/html
 #config Apache
-RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
-RUN chgrp -R 0 /var/log/httpd /var/run/httpd 
-RUN chmod -R g=u /var/log/httpd /var/run/httpd
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
+&& chgrp -R 0 /var/log/httpd /var/run/httpd \
+&& chmod -R g=u /var/log/httpd /var/run/httpd
 EXPOSE 8080
 USER 1001
 ENTRYPOINT ["httpd"]
