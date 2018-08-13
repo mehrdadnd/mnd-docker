@@ -1,5 +1,5 @@
 FROM centos:7
-RUN yum install ~y httpd \
+RUN yum install -y httpd \
 && yum clean all
 ADD index.html /var/www/html
 #config Apache
