@@ -9,4 +9,4 @@ RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
 EXPOSE 8080
 #USER 1001
 ENTRYPOINT ["httpd"]
-#CMD ["-D”, "FOREGROUND"]
+CMD ["-D”, "FOREGROUND"]
