@@ -23,7 +23,7 @@ RUN   yum install -y --setopt=tsflags=nodocs --noplugins httpd && \
       echo "Hello from the httpd-parent container!" > ${HOME}/index.html
 
 # Allows child images to inject their own content into DocumentRoot
-ONBUILD COPY src/ ${DOCROOT}/ 6
+ONBUILD COPY src/ ${DOCROOT}/
 
 EXPOSE 80
 
@@ -31,7 +31,7 @@ EXPOSE 80
 RUN rm -rf /run/httpd && mkdir /run/httpd
 
 # Run as the root user
-USER root 7
+USER root
 
 # Launch apache daemon
 CMD /usr/sbin/apachectl -DFOREGROUND
