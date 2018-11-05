@@ -1,2 +1,2 @@
-FROM centos:latest
-CMD bash -c "while true; do (( i++ )); echo \$i hi; sleep 7; done"
+FROM alpine:3.7
+RUN apk add --no-cache wget
